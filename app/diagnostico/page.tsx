@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 
 // ── Design primitives ──────────────────────────────────────────────────────
 function DiagStripe({ color = '#E9C46A', opacity = 0.08 }: { color?: string; opacity?: number }) {
@@ -77,6 +76,8 @@ export default function DiagnosticoPage() {
   const [step, setStep]       = useState<DiagStep>(1)
   const [checks, setChecks]   = useState<boolean[]>(Array(SIGNALS.length).fill(false))
   const [answers, setAnswers] = useState<NumberAnswer[]>(Array(KEY_NUMBERS.length).fill(null))
+  const whatsappHref =
+    'https://wa.me/524441428472?text=Hola%2C%20acabo%20de%20terminar%20el%20diagn%C3%B3stico%20de%20Radar%20de%20Valor%20y%20quiero%20agendar%20una%20sesi%C3%B3n.'
 
   const toggleCheck = (i: number) =>
     setChecks((prev) => prev.map((v, idx) => (idx === i ? !v : v)))
@@ -140,7 +141,7 @@ export default function DiagnosticoPage() {
       >
         <DiagStripe color="#E9C46A" opacity={0.06} />
 
-        <div className="relative max-w-4xl mx-auto px-6 pt-5 pb-2 flex items-center justify-between border-b border-white/10">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-4 sm:pt-5 pb-2 flex items-center justify-between gap-3 border-b border-white/10">
           <Link
             href="/"
             className="flex items-center gap-2 font-heading font-bold text-white/70 hover:text-white text-xs uppercase tracking-widest transition-colors"
@@ -150,12 +151,22 @@ export default function DiagnosticoPage() {
             </svg>
             Radar de Valor
           </Link>
-          <span className="font-mono text-white/30 text-xs hidden sm:block">
-            GRATIS · SIN REGISTRO · 3 MIN
-          </span>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="font-mono text-white/30 text-xs hidden sm:block">
+              GRATIS · SIN REGISTRO · 3 MIN
+            </span>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-[11px] sm:text-xs py-2 px-3 sm:px-4 whitespace-nowrap"
+            >
+              WhatsApp
+            </a>
+          </div>
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-6 pt-10 pb-4">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-8 sm:pt-10 pb-3 sm:pb-4">
           <div className="flex items-start gap-4">
             <div className="w-1 self-stretch mt-1" style={{ background: '#E9C46A', minHeight: '3rem' }} />
             <div>
@@ -176,10 +187,10 @@ export default function DiagnosticoPage() {
       </header>
 
       {/* MAIN */}
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 -mt-8 pb-16 relative z-10">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 -mt-4 sm:-mt-8 pb-12 sm:pb-16 relative z-10">
 
         {/* Step indicator */}
-        <div className="flex border border-gray-300 bg-white mb-8">
+        <div className="flex overflow-x-auto border border-gray-300 bg-white mb-6 sm:mb-8">
           {([
             { n: '01', label: 'Señales del negocio', s: 1 },
             { n: '02', label: 'Los 5 números clave', s: 2 },
@@ -187,7 +198,7 @@ export default function DiagnosticoPage() {
           ] as { n: string; label: string; s: DiagStep }[]).map((item) => (
             <div
               key={item.n}
-              className={`flex-1 px-4 py-3 border-r last:border-r-0 border-gray-200 transition-colors ${
+              className={`min-w-[170px] sm:min-w-0 flex-1 px-3 sm:px-4 py-3 border-r last:border-r-0 border-gray-200 transition-colors ${
                 step === item.s ? 'bg-slate-brand text-white'
                 : step > item.s ? 'bg-emerald-brand/10 text-emerald-brand'
                 : 'bg-white text-gray-mid'
@@ -202,7 +213,7 @@ export default function DiagnosticoPage() {
         {/* ── STEP 1 ─────────────────────────────────────────────────── */}
         {step === 1 && (
           <div className="bg-white border border-gray-300">
-            <div className="border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+            <div className="border-b border-gray-200 px-4 sm:px-6 py-4 flex items-center justify-between gap-3">
               <p className="font-heading font-bold text-slate-brand text-sm">
                 Marca las situaciones que reconoces en tu negocio
               </p>
@@ -214,7 +225,7 @@ export default function DiagnosticoPage() {
                 <button
                   key={i}
                   onClick={() => toggleCheck(i)}
-                  className={`w-full text-left px-6 py-4 transition-all flex items-start gap-4 ${
+                  className={`w-full text-left px-4 sm:px-6 py-4 transition-all flex items-start gap-3 sm:gap-4 ${
                     checks[i] ? 'bg-coral-brand/5' : 'hover:bg-gray-50'
                   }`}
                 >
@@ -234,15 +245,15 @@ export default function DiagnosticoPage() {
               ))}
             </div>
 
-            <div className="border-t border-gray-200 px-6 py-4 flex items-center justify-between bg-pearl">
-              <p className="text-gray-mid text-xs">
+            <div className="border-t border-gray-200 px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-pearl">
+              <p className="text-gray-mid text-xs pr-2">
                 {checkedCount === 0
                   ? 'No hay respuestas correctas o incorrectas — sé honesto'
                   : checkedCount < 4
                   ? `${checkedCount} situación${checkedCount > 1 ? 'es' : ''} identificada${checkedCount > 1 ? 's' : ''}`
                   : `${checkedCount} de 7 — hay oportunidades claras de mejora`}
               </p>
-              <button onClick={() => setStep(2)} className="btn-primary text-xs py-2.5 px-6">
+              <button onClick={() => setStep(2)} className="btn-primary w-full sm:w-auto text-xs py-2.5 px-6">
                 Continuar →
               </button>
             </div>
@@ -252,7 +263,7 @@ export default function DiagnosticoPage() {
         {/* ── STEP 2 ─────────────────────────────────────────────────── */}
         {step === 2 && (
           <div className="bg-white border border-gray-300">
-            <div className="border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+            <div className="border-b border-gray-200 px-4 sm:px-6 py-4 flex items-center justify-between gap-3">
               <p className="font-heading font-bold text-slate-brand text-sm">
                 ¿Conoces estos 5 números de tu negocio?
               </p>
@@ -262,7 +273,7 @@ export default function DiagnosticoPage() {
             <div className="divide-y divide-gray-100">
               {KEY_NUMBERS.map((num, i) => (
                 <div key={num.id}>
-                  <div className="px-6 py-4 flex items-start justify-between gap-4">
+                  <div className="px-4 sm:px-6 py-4 flex items-start justify-between gap-4">
                     <div>
                       <p className="font-heading font-bold text-slate-brand text-sm">{num.name}</p>
                       <p className="text-gray-mid text-sm mt-0.5">{num.question}</p>
@@ -278,7 +289,7 @@ export default function DiagnosticoPage() {
                       <button
                         key={opt.val}
                         onClick={() => setAnswer(i, opt.val)}
-                        className="flex-1 py-3 text-xs font-heading font-bold uppercase tracking-wide transition-all border-r last:border-r-0 border-gray-100"
+                        className="flex-1 py-3 text-[11px] sm:text-xs font-heading font-bold uppercase tracking-wide transition-all border-r last:border-r-0 border-gray-100"
                         style={
                           answers[i] === opt.val
                             ? { background: opt.bg, color: opt.fg }
@@ -290,7 +301,7 @@ export default function DiagnosticoPage() {
                     ))}
                   </div>
                   {(answers[i] === 'no' || answers[i] === 'aprox') && (
-                    <div className="px-6 py-3 bg-gray-50 border-t border-gray-100">
+                    <div className="px-4 sm:px-6 py-3 bg-gray-50 border-t border-gray-100">
                       <p className="text-gray-mid text-xs italic">{num.why}</p>
                     </div>
                   )}
@@ -298,17 +309,17 @@ export default function DiagnosticoPage() {
               ))}
             </div>
 
-            <div className="border-t border-gray-200 px-6 py-4 flex items-center justify-between bg-pearl">
+            <div className="border-t border-gray-200 px-4 sm:px-6 py-4 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-pearl">
               <button
                 onClick={() => setStep(1)}
-                className="text-gray-mid text-xs hover:text-slate-brand transition-colors font-heading font-bold uppercase tracking-wide"
+                className="text-gray-mid text-xs hover:text-slate-brand transition-colors font-heading font-bold uppercase tracking-wide text-left"
               >
                 ← Volver
               </button>
               <button
                 onClick={() => setStep(3)}
                 disabled={!allAnswered}
-                className="btn-primary text-xs py-2.5 px-6 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="btn-primary w-full sm:w-auto text-xs py-2.5 px-6 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Ver mi diagnóstico →
               </button>
@@ -324,17 +335,17 @@ export default function DiagnosticoPage() {
             <div className="relative overflow-hidden border border-gray-300" style={{ background: '#2C3E50' }}>
               <DiagStripe color={level.color} opacity={0.1} />
               <div className="h-1 w-full" style={{ background: level.color }} />
-              <div className="relative px-8 py-8 grid md:grid-cols-3 gap-6 items-center">
+              <div className="relative px-4 sm:px-8 py-6 sm:py-8 grid md:grid-cols-3 gap-6 items-center">
                 <div className="text-center md:text-left">
                   <Label>Tu puntuación</Label>
                   <div className="flex items-end gap-1 mt-2 justify-center md:justify-start">
                     <span
                       className="font-mono font-bold leading-none"
-                      style={{ fontSize: '5rem', color: level.color }}
+                      style={{ fontSize: 'clamp(3.25rem, 18vw, 5rem)', color: level.color }}
                     >
                       {Math.round(total)}
                     </span>
-                    <span className="text-white/25 font-mono text-3xl mb-3">/{maxScore}</span>
+                    <span className="text-white/25 font-mono text-xl sm:text-3xl mb-2 sm:mb-3">/{maxScore}</span>
                   </div>
                   <div
                     className="inline-block font-mono text-xs font-bold px-3 py-1 mt-1 uppercase tracking-wider"
@@ -355,13 +366,13 @@ export default function DiagnosticoPage() {
             {/* Specific insights */}
             {insights.length > 0 && (
               <div className="bg-white border border-gray-300">
-                <div className="border-b border-gray-200 px-6 py-3 flex items-center gap-3">
+                <div className="border-b border-gray-200 px-4 sm:px-6 py-3 flex items-center gap-3">
                   <div className="w-3 h-3" style={{ background: '#E9C46A' }} />
                   <span className="font-heading font-bold text-slate-brand uppercase tracking-widest text-xs">
                     Lo que esto significa específicamente para tu negocio
                   </span>
                 </div>
-                <div className="px-6 py-5 space-y-4">
+                <div className="px-4 sm:px-6 py-5 space-y-4">
                   {insights.map((ins, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="font-mono text-xs font-bold mt-0.5 flex-shrink-0" style={{ color: '#0A5C4B' }}>→</span>
@@ -374,7 +385,7 @@ export default function DiagnosticoPage() {
 
             {/* CTA */}
             <div
-              className="relative overflow-hidden border border-gray-300 px-8 py-8"
+              className="relative overflow-hidden border border-gray-300 px-4 sm:px-8 py-6 sm:py-8"
               style={{ background: '#2C3E50' }}
             >
               <DiagStripe color="#E9C46A" opacity={0.06} />
@@ -388,13 +399,18 @@ export default function DiagnosticoPage() {
                     En 1 hora analizamos juntos los datos de tu negocio y definimos las 3 primeras acciones.
                   </p>
                 </div>
-                <div className="flex gap-3 flex-shrink-0">
-                  <Link href="/#contacto" className="btn-primary text-xs py-3 px-6 whitespace-nowrap">
-                    Agendar sesión de 1 hora
-                  </Link>
+                <div className="flex w-full sm:w-auto flex-col sm:flex-row gap-3 flex-shrink-0">
+                  <a
+                    href={whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary w-full sm:w-auto text-xs py-3 px-6 whitespace-nowrap text-center"
+                  >
+                    Escribir por WhatsApp
+                  </a>
                   <button
                     onClick={reset}
-                    className="btn-outline text-xs py-3 px-4 whitespace-nowrap"
+                    className="btn-outline w-full sm:w-auto text-xs py-3 px-4 whitespace-nowrap"
                     style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'rgba(255,255,255,0.6)' }}
                   >
                     Reiniciar
