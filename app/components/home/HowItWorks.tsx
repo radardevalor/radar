@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import DiagStripe from '../primitives/DiagStripe'
 import SectionLabel from '../primitives/SectionLabel'
+import { IconWhatsApp } from '../icons'
+
+const whatsappHref =
+  'https://wa.me/524441428472?text=Hola%2C%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20trabajo%20con%20Radar%20de%20Valor.'
 
 const steps = [
   {
@@ -48,11 +52,19 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row items-center gap-6">
           <Link href="/diagnostico" className="btn-primary">
             Solicita tu diagnóstico
           </Link>
-          <p className="text-white/50 text-sm">Gratis · Sin registro · 3 minutos.</p>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+          >
+            <IconWhatsApp />
+            o agenda por WhatsApp
+          </a>
         </div>
       </div>
     </section>

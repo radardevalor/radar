@@ -1,5 +1,8 @@
 import SectionLabel from '../primitives/SectionLabel'
-import { IconCheck, IconX } from '../icons'
+import { IconCheck, IconWhatsApp, IconX } from '../icons'
+
+const whatsappHref =
+  'https://wa.me/524441428472?text=Hola%2C%20no%20estoy%20seguro%20si%20mi%20negocio%20aplica%20para%20Radar%20de%20Valor.%20%C2%BFMe%20pueden%20orientar%3F'
 
 const ideal = [
   'PYMES con 1–50 empleados que ya tienen operación y quieren crecer',
@@ -68,6 +71,19 @@ export default function ForWhom() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="mt-8 flex items-center gap-3 text-sm text-gray-mid">
+          <span>¿No estás seguro si aplicas?</span>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-emerald-brand hover:text-emerald-700 transition-colors font-medium"
+          >
+            <IconWhatsApp />
+            Cuéntanos tu caso
+          </a>
         </div>
       </div>
     </section>

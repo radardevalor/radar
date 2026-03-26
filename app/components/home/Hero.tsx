@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import DiagStripe from '../primitives/DiagStripe'
 import SectionLabel from '../primitives/SectionLabel'
+import { IconWhatsApp } from '../icons'
+
+const whatsappHref =
+  'https://wa.me/524441428472?text=Hola%2C%20me%20interesa%20el%20diagn%C3%B3stico%20de%20Radar%20de%20Valor.'
 
 export default function Hero() {
   return (
@@ -60,6 +64,15 @@ export default function Hero() {
           </a>
         </div>
         <p className="text-gray-mid text-sm mt-4">Gratis · Sin registro · Resultado inmediato.</p>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-3 text-sm text-emerald-brand hover:text-emerald-700 transition-colors"
+        >
+          <IconWhatsApp />
+          ¿Prefieres hablar directo? Escríbenos al WhatsApp
+        </a>
 
         {/* Trust badges — sharp, bordered */}
         <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 border-t border-gray-200">
