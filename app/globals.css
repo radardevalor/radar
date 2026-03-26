@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-emerald: #0A5C4B;
+  --color-amber: #E9C46A;
+  --color-coral: #E76F51;
+  --color-slate: #2C3E50;
+  --color-gray-mid: #6C757D;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #2C3E50;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+@layer components {
+  /* Sharp card — border only, no radius, no shadow */
+  .card {
+    @apply bg-white p-6 border border-gray-200;
+  }
+
+  /* Primary CTA — parallelogram cut via clip-path, no radius */
+  .btn-primary {
+    @apply bg-amber-brand text-slate-brand font-heading font-bold px-8 py-4 text-base
+           hover:brightness-105 active:scale-95 transition-all duration-200 uppercase tracking-wider;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  }
+
+  /* Outline CTA — sharp, border only */
+  .btn-outline {
+    @apply border-2 border-emerald-brand text-emerald-brand font-heading font-bold px-8 py-4
+           text-base hover:bg-emerald-brand hover:text-white transition-all duration-200 uppercase tracking-wider;
+  }
+
+  .section-title {
+    @apply font-heading font-bold text-3xl md:text-4xl text-slate-brand leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-gray-mid text-lg leading-relaxed;
+  }
+
+  /* Section label — consistent uppercase micro-label */
+  .section-label {
+    @apply font-heading text-xs font-bold uppercase tracking-widest text-gray-mid;
+  }
+}
