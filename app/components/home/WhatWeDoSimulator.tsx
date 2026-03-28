@@ -19,7 +19,7 @@ export default function WhatWeDoSimulator() {
 
   const chartData = [
     { label: 'Ingreso', value: revenue, color: '#0A5C4B' },
-    { label: 'Costo total', value: totalCost, color: '#E76F51' },
+    { label: 'Total', value: totalCost, color: '#E76F51' },
     { label: 'Utilidad', value: Math.max(profit, 0), color: '#E9C46A' },
   ]
   const maxValue = Math.max(...chartData.map((d) => d.value), 1)
