@@ -9,9 +9,12 @@ const tags = [
 
 export default function About() {
   return (
-    <section id="nosotros" className="bg-white py-16 md:py-24 px-4">
-      <div className="max-w-3xl mx-auto">
-        <div>
+    <section id="nosotros" className="bg-white py-16 md:py-24 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex gap-0">
+          {/* Emerald accent bar */}
+          <div className="w-1 bg-emerald-brand flex-shrink-0 mr-5 sm:mr-8" />
+          <div className="flex-1">
           <SectionLabel>Sobre nosotros</SectionLabel>
           <h2 className="section-title mt-1 mb-6">Hola, somos Radar de Valor</h2>
 
@@ -33,13 +36,11 @@ export default function About() {
 
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <span
-                key={tag}
-                className="border border-emerald-brand text-emerald-brand text-xs font-heading font-semibold px-3 py-1.5 uppercase tracking-wide"
-              >
+              <span key={tag} className="badge">
                 {tag}
               </span>
             ))}
+          </div>
           </div>
         </div>
       </div>

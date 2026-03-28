@@ -39,7 +39,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portafolio" className="bg-pearl py-16 md:py-24 px-4">
+    <section id="portafolio" className="bg-pearl py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <SectionLabel>Trabajo real · Casos de estudio</SectionLabel>
@@ -61,12 +61,7 @@ export default function Portfolio() {
               <div className="relative flex-1">
                 <div className="flex items-start justify-between mb-4">
                   <p className="font-mono text-xs text-gray-mid">{p.index}</p>
-                  <span
-                    className="font-mono text-xs font-bold px-2 py-0.5 uppercase border"
-                    style={{ borderColor: p.accentColor, color: p.accentColor }}
-                  >
-                    {p.tag}
-                  </span>
+                  <span className="badge-gray">{p.tag}</span>
                 </div>
 
                 <div className="mb-4" style={{ color: p.accentColor }}>

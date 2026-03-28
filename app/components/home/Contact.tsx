@@ -8,7 +8,7 @@ const whatsappHref =
   'https://wa.me/524441428472?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20Radar%20de%20Valor.'
 
 const inputClass =
-  'w-full border border-gray-300 px-4 py-3 text-slate-brand placeholder-gray-300 font-body text-sm focus:outline-none focus:border-slate-brand transition-colors bg-white'
+  'w-full border border-gray-300 px-4 py-3 text-slate-brand placeholder-gray-mid font-body text-sm focus:outline-none focus:border-slate-brand transition-colors bg-white'
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -32,7 +32,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contacto" className="relative overflow-hidden py-16 md:py-24 px-4" style={{ background: '#2C3E50' }}>
+    <section id="contacto" className="relative overflow-hidden py-16 md:py-24 px-4 sm:px-6" style={{ background: '#2C3E50' }}>
       <DiagStripe color="#E9C46A" opacity={0.06} />
 
       {/* Amber top accent */}
@@ -40,7 +40,7 @@ export default function Contact() {
 
       <div className="relative max-w-2xl mx-auto">
         <div className="mb-10 text-center">
-          <SectionLabel>Después del diagnóstico · Paso 2</SectionLabel>
+          <SectionLabel light>Después del diagnóstico · Paso 2</SectionLabel>
           <h2 className="font-heading font-bold text-white leading-tight mt-1"
             style={{ fontSize: 'clamp(1.6rem, 4vw, 2.5rem)' }}>
             Ya conoces tu puntuación.<br className="hidden sm:block" /> Convirtámosla en un plan.
@@ -50,7 +50,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="bg-white border-t-4 border-amber-brand p-8">
+        <div className="bg-white border-t-4 border-amber-brand p-5 sm:p-8">
           {status === 'success' ? (
             <div className="text-center py-8">
               <div className="w-12 h-12 bg-emerald-brand flex items-center justify-center mx-auto mb-4">

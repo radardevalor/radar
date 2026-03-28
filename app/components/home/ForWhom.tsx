@@ -21,7 +21,7 @@ const notIdeal = [
 
 export default function ForWhom() {
   return (
-    <section className="bg-pearl py-16 md:py-24 px-4">
+    <section className="bg-pearl py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
           <SectionLabel>Perfil de cliente</SectionLabel>
@@ -33,10 +33,10 @@ export default function ForWhom() {
 
         <div className="grid md:grid-cols-2 gap-px bg-gray-300 border border-gray-300">
           {/* Yes */}
-          <div className="bg-white px-8 py-7">
+          <div className="bg-white px-5 sm:px-8 py-7">
             <div className="border-b-2 border-emerald-brand pb-4 mb-6 flex items-center gap-3">
-              <div className="w-6 h-6 bg-emerald-brand flex items-center justify-center">
-                <span className="text-white font-bold text-xs">✓</span>
+              <div className="w-6 h-6 bg-emerald-brand flex items-center justify-center text-white">
+                <IconCheck />
               </div>
               <h3 className="font-heading font-bold text-slate-brand uppercase tracking-widest text-sm">
                 Sí trabajamos contigo si…
@@ -53,10 +53,10 @@ export default function ForWhom() {
           </div>
 
           {/* No */}
-          <div className="bg-white px-8 py-7">
+          <div className="bg-white px-5 sm:px-8 py-7">
             <div className="border-b-2 border-coral-brand pb-4 mb-6 flex items-center gap-3">
-              <div className="w-6 h-6 bg-coral-brand flex items-center justify-center">
-                <span className="text-white font-bold text-xs">✗</span>
+              <div className="w-6 h-6 bg-coral-brand flex items-center justify-center text-white">
+                <IconX />
               </div>
               <h3 className="font-heading font-bold text-slate-brand uppercase tracking-widest text-sm">
                 No somos la opción si…

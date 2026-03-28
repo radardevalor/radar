@@ -20,35 +20,121 @@ body {
   line-height: 1.6;
 }
 
+/* Global focus ring — sharp, on-brand */
+*:focus-visible {
+  outline: 2px solid var(--color-emerald);
+  outline-offset: 2px;
+}
+
+/* Range input — flat track, sharp thumb, on-brand */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #E2E4E7;
+  border-radius: 0;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--color-emerald);
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+}
+input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--color-emerald);
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #E2E4E7;
+  border-radius: 0;
+}
+input[type='range']::-moz-range-track {
+  height: 4px;
+  background: #E2E4E7;
+  border-radius: 0;
+}
+
 @layer components {
   /* Sharp card — border only, no radius, no shadow */
   .card {
     @apply bg-white p-6 border border-gray-200;
   }
 
-  /* Primary CTA — parallelogram cut via clip-path, no radius */
+  /* Premium link — smooth color transition */
+  a {
+    transition: color 0.18s ease, opacity 0.18s ease;
+  }
+
+  /* Primary CTA — parallelogram cut via clip-path, no radius, 44px min touch target */
   .btn-primary {
-    @apply bg-amber-brand text-slate-brand font-heading font-bold px-8 py-4 text-base
-           hover:brightness-105 active:scale-95 transition-all duration-200 uppercase tracking-wider;
+    @apply bg-amber-brand text-slate-brand font-heading font-bold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base
+           hover:brightness-105 active:scale-95 transition-all duration-200 uppercase tracking-wider cursor-pointer;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+    letter-spacing: 0.08em;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Outline CTA — sharp, border only */
+  /* Outline CTA — sharp, border only, 44px min touch target */
   .btn-outline {
-    @apply border-2 border-emerald-brand text-emerald-brand font-heading font-bold px-8 py-4
-           text-base hover:bg-emerald-brand hover:text-white transition-all duration-200 uppercase tracking-wider;
+    @apply border-2 border-emerald-brand text-emerald-brand font-heading font-bold px-6 sm:px-8 py-3 sm:py-4
+           text-sm sm:text-base hover:bg-emerald-brand hover:text-white transition-all duration-200 uppercase tracking-wider cursor-pointer;
+    letter-spacing: 0.08em;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  /* Badge — non-interactive label. Filled background, no border, no hover, cursor-default. */
+  .badge {
+    @apply inline-block bg-emerald-brand/10 text-emerald-brand font-heading font-semibold
+           text-xs px-2.5 py-1 uppercase tracking-wide cursor-default select-none;
+  }
+  .badge-amber {
+    @apply inline-block bg-amber-brand/15 text-slate-brand font-heading font-semibold
+           text-xs px-2.5 py-1 uppercase tracking-wide cursor-default select-none;
+  }
+  .badge-gray {
+    @apply inline-block bg-gray-100 text-gray-mid font-mono font-bold
+           text-xs px-2.5 py-1 uppercase tracking-wide cursor-default select-none;
+  }
+
+  /* Section title — Sora at commanding scale, institutional precision */
   .section-title {
-    @apply font-heading font-bold text-3xl md:text-4xl text-slate-brand leading-tight;
+    @apply font-heading font-bold text-slate-brand;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
   }
 
   .section-subtitle {
-    @apply text-gray-mid text-lg leading-relaxed;
+    @apply text-gray-mid text-lg leading-relaxed font-body;
   }
 
-  /* Section label — consistent uppercase micro-label */
+  /* Section label — Swiss micro-label: mono, uppercase, spaced */
   .section-label {
-    @apply font-heading text-xs font-bold uppercase tracking-widest text-gray-mid;
+    @apply font-mono text-xs font-bold uppercase tracking-widest text-gray-mid;
+  }
+
+  /* Ghost number — oversized index as background typographic element (Constructivist) */
+  .ghost-number {
+    @apply absolute font-heading font-bold text-slate-brand select-none pointer-events-none;
+    font-size: clamp(6rem, 20vw, 14rem);
+    line-height: 1;
+    opacity: 0.04;
+    letter-spacing: -0.04em;
   }
 }

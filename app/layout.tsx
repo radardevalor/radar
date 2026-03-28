@@ -1,16 +1,29 @@
 import type { Metadata } from 'next'
-import { Inter, Open_Sans } from 'next/font/google'
+import { Sora, Barlow, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
+// Sora: geometric grotesque with institutional precision —
+// data agencies, central banks, EU statistical portals
+const sora = Sora({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sora',
+  weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
 })
 
-const openSans = Open_Sans({
+// Barlow: humanist sans, excellent readability, pairs with Syne's geometry
+const barlow = Barlow({
   subsets: ['latin'],
-  variable: '--font-open-sans',
+  variable: '--font-barlow',
+  weight: ['300', '400', '500', '600'],
+  display: 'swap',
+})
+
+// IBM Plex Mono: technical precision for data and numbers
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: ['400', '500', '700'],
   display: 'swap',
 })
 
@@ -34,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${openSans.variable}`}>
+    <html lang="es" className={`${sora.variable} ${barlow.variable} ${ibmPlexMono.variable}`}>
       <body className="font-body antialiased">{children}</body>
     </html>
   )

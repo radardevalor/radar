@@ -1,5 +1,5 @@
-export default function SectionLabel({ children }: { children: React.ReactNode }) {
+export default function SectionLabel({ children, light }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className="section-label mb-2">{children}</p>
+    <p className={`section-label mb-2 ${light ? 'text-white/50' : ''}`}>{children}</p>
   )
 }

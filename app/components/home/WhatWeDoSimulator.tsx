@@ -9,6 +9,7 @@ export default function WhatWeDoSimulator() {
   const [unitCost, setUnitCost] = useState(140)
   const [volume, setVolume] = useState(800)
   const [fixedCost, setFixedCost] = useState(25000)
+  const [activeScenario, setActiveScenario] = useState<'conservador' | 'base' | 'agresivo' | null>('base')
 
   const revenue = price * volume
   const totalCost = unitCost * volume
@@ -24,6 +25,7 @@ export default function WhatWeDoSimulator() {
   const maxValue = Math.max(...chartData.map((d) => d.value), 1)
 
   const applyScenario = (type: 'conservador' | 'base' | 'agresivo') => {
+    setActiveScenario(type)
     if (type === 'conservador') {
       setPrice(220); setUnitCost(150); setVolume(500); setFixedCost(25000)
       return
@@ -37,10 +39,10 @@ export default function WhatWeDoSimulator() {
 
   const rangeClass = 'w-full accent-emerald-brand'
   const inputClass =
-    'w-full border border-gray-300 px-3 py-2 text-slate-brand font-mono text-sm focus:outline-none focus:border-slate-brand bg-white'
+    'w-full border border-gray-300 px-3 py-2 text-slate-brand placeholder-gray-mid font-mono text-sm focus:outline-none focus:border-slate-brand bg-white'
 
   return (
-    <section className="bg-white py-16 md:py-24 px-4">
+    <section className="bg-white py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-10">
           <SectionLabel>Lo que hacemos</SectionLabel>
@@ -53,46 +55,47 @@ export default function WhatWeDoSimulator() {
         <div className="grid lg:grid-cols-2 gap-px bg-gray-300 border border-gray-300">
           <div className="bg-pearl p-6">
             <div className="flex flex-wrap gap-2 mb-6">
-              <button type="button" onClick={() => applyScenario('conservador')} className="btn-outline text-xs py-2 px-3">
-                Conservador
-              </button>
-              <button type="button" onClick={() => applyScenario('base')} className="btn-outline text-xs py-2 px-3">
-                Base
-              </button>
-              <button type="button" onClick={() => applyScenario('agresivo')} className="btn-outline text-xs py-2 px-3">
-                Agresivo
-              </button>
+              {(['conservador', 'base', 'agresivo'] as const).map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => applyScenario(s)}
+                  className={activeScenario === s ? 'btn-primary text-xs py-2 px-3' : 'btn-outline text-xs py-2 px-3'}
+                >
+                  {s.charAt(0).toUpperCase() + s.slice(1)}
+                </button>
+              ))}
             </div>
 
             <div className="space-y-5">
               <div>
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-1.5">
                   <label htmlFor="sim-price" className="section-label !mb-0">Precio unitario (MXN)</label>
-                  <input id="sim-price" type="number" min={1} value={price} onChange={(e) => setPrice(Number(e.target.value) || 0)} className={inputClass} style={{ maxWidth: 130, borderRadius: 0 }} />
+                  <input id="sim-price" type="number" min={1} value={price} onChange={(e) => setPrice(Number(e.target.value) || 0)} className={inputClass} style={{ width: '100%', maxWidth: 130, borderRadius: 0 }} />
                 </div>
                 <input type="range" min={50} max={1000} step={5} value={price} onChange={(e) => setPrice(Number(e.target.value))} className={rangeClass} />
               </div>
 
               <div>
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-1.5">
                   <label htmlFor="sim-cost" className="section-label !mb-0">Costo unitario (MXN)</label>
-                  <input id="sim-cost" type="number" min={0} value={unitCost} onChange={(e) => setUnitCost(Number(e.target.value) || 0)} className={inputClass} style={{ maxWidth: 130, borderRadius: 0 }} />
+                  <input id="sim-cost" type="number" min={0} value={unitCost} onChange={(e) => setUnitCost(Number(e.target.value) || 0)} className={inputClass} style={{ width: '100%', maxWidth: 130, borderRadius: 0 }} />
                 </div>
                 <input type="range" min={20} max={900} step={5} value={unitCost} onChange={(e) => setUnitCost(Number(e.target.value))} className={rangeClass} />
               </div>
 
               <div>
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-1.5">
                   <label htmlFor="sim-volume" className="section-label !mb-0">Volumen mensual (unidades)</label>
-                  <input id="sim-volume" type="number" min={0} value={volume} onChange={(e) => setVolume(Number(e.target.value) || 0)} className={inputClass} style={{ maxWidth: 130, borderRadius: 0 }} />
+                  <input id="sim-volume" type="number" min={0} value={volume} onChange={(e) => setVolume(Number(e.target.value) || 0)} className={inputClass} style={{ width: '100%', maxWidth: 130, borderRadius: 0 }} />
                 </div>
                 <input type="range" min={0} max={5000} step={25} value={volume} onChange={(e) => setVolume(Number(e.target.value))} className={rangeClass} />
               </div>
 
               <div>
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-1.5">
                   <label htmlFor="sim-fixed" className="section-label !mb-0">Costo fijo mensual (MXN)</label>
-                  <input id="sim-fixed" type="number" min={0} value={fixedCost} onChange={(e) => setFixedCost(Number(e.target.value) || 0)} className={inputClass} style={{ maxWidth: 130, borderRadius: 0 }} />
+                  <input id="sim-fixed" type="number" min={0} value={fixedCost} onChange={(e) => setFixedCost(Number(e.target.value) || 0)} className={inputClass} style={{ width: '100%', maxWidth: 130, borderRadius: 0 }} />
                 </div>
                 <input type="range" min={0} max={200000} step={500} value={fixedCost} onChange={(e) => setFixedCost(Number(e.target.value))} className={rangeClass} />
               </div>

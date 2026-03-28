@@ -28,8 +28,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        heading: ['var(--font-inter)', 'sans-serif'],
-        body: ['var(--font-open-sans)', 'sans-serif'],
+        heading: ['var(--font-sora)', 'sans-serif'],
+        body: ['var(--font-barlow)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       lineHeight: {
         relaxed: '1.6',
