@@ -46,7 +46,7 @@ export default function Contact() {
             Ya conoces tu puntuación.<br className="hidden sm:block" /> Convirtámosla en un plan.
           </h2>
           <p className="text-white/60 text-base mt-3">
-            1 hora · sin compromiso · sin jerga · solo claridad.
+            Una hora. Tus datos reales. Un plan concreto.
           </p>
         </div>
 

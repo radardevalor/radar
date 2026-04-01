@@ -5,26 +5,26 @@ const items = [
   {
     index: '01',
     Icon: IconChart,
-    title: 'Más valor con las mismas acciones',
-    desc: 'Identificamos qué productos, clientes o canales generan el mayor ingreso para que pongas tu energía donde realmente importa.',
+    title: 'Enfoca donde más importa',
+    desc: 'Identificamos el 20% de productos, clientes o canales que generan el 80% de tu valor real — para que dejes de dispersar energía en lo que no mueve el negocio.',
   },
   {
     index: '02',
     Icon: IconTarget,
-    title: 'Decisiones con certeza',
-    desc: 'Cada decisión de negocio respaldada por lo que realmente pasa en tus números. Sin adivinar.',
+    title: 'Decide con evidencia, no con esperanza',
+    desc: 'Cada acción de negocio respaldada por lo que realmente ocurre en tus datos — no por lo que crees que ocurre. La diferencia puede ser muy grande.',
   },
   {
     index: '03',
     Icon: IconLightning,
-    title: 'Operación más eficiente',
-    desc: 'Detectamos cuellos de botella y gastos que no generan valor, para que tu negocio funcione mejor con los mismos recursos.',
+    title: 'Descubre qué te cuesta sin rendir',
+    desc: 'Detectamos los gastos invisibles, los cuellos de botella silenciosos y los productos que ocupan espacio sin generar valor real. Ahí está el margen escondido.',
   },
   {
     index: '04',
     Icon: IconUsers,
-    title: 'Clientes más leales',
-    desc: 'Entendemos los patrones de comportamiento de tus mejores clientes para que puedas conseguir más como ellos.',
+    title: 'Replica a tus mejores clientes',
+    desc: 'Decodificamos el patrón de comportamiento de tus clientes más valiosos — para que sepas exactamente cómo conseguir más como ellos y retener a los que ya tienes.',
   },
 ]
 
@@ -34,7 +34,7 @@ export default function Benefits() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <SectionLabel>Lo que obtienes</SectionLabel>
-          <h2 className="section-title">Lo que cambia en tu negocio</h2>
+          <h2 className="section-title">De adivinar a saber</h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200">
           {items.map((item) => (

@@ -5,20 +5,20 @@ const items = [
   {
     index: '01',
     Icon: IconBarChart,
-    title: 'Tienes datos pero no respuestas',
-    desc: 'Sientes que tu negocio genera información valiosa, pero no sabes qué hacer con ella ni qué preguntar.',
+    title: 'Los datos están — las respuestas no',
+    desc: 'Tu negocio registra ventas, gastos y clientes todos los días. El problema no es que no tengas datos — es que nadie te enseñó a interrogarlos.',
   },
   {
     index: '02',
     Icon: IconQuestion,
-    title: 'Decisiones por intuición',
-    desc: 'Lanzas campañas, contratas personal o cambias precios sin números que te respalden. A veces funciona, a veces no.',
+    title: 'La intuición funciona — hasta que no',
+    desc: 'No hay nada malo en la experiencia. El problema es no saber cuándo tienes razón y cuándo estás repitiendo un error que ya no ves.',
   },
   {
     index: '03',
     Icon: IconClock,
     title: 'Sin tiempo para analizar',
-    desc: 'El día a día absorbe todo tu tiempo. El análisis siempre queda "para después" y ese después nunca llega.',
+    desc: 'El análisis siempre queda "para después". Y ese después nunca llega — mientras los patrones que importan siguen sin leerse.',
   },
 ]
 
@@ -30,9 +30,9 @@ export default function Problem() {
           <SectionLabel>El problema que resolvemos</SectionLabel>
           <h2 className="section-title mb-4">¿Te suena familiar?</h2>
           <p className="text-slate-brand text-lg leading-relaxed max-w-2xl">
-            La intuición no está mal —{' '}
+            No es falta de información —{' '}
             <strong className="text-emerald-brand">
-              el problema es decidir sin saber si tienes razón.
+              es falta de interpretación.
             </strong>
           </p>
         </div>

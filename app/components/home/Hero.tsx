@@ -77,11 +77,11 @@ export default function Hero() {
         </h1>
 
         <p className="font-body text-gray-mid text-xl leading-relaxed mb-2 max-w-2xl">
-          Convertimos los datos de tu negocio en decisiones claras y accionables.
-          Sin rollos — solo claridad para crecer.
+          Tu negocio ya genera los datos que necesitas para decidir con certeza.
+          El problema nunca fue la información — fue saber qué preguntarle.
         </p>
         <p className="font-body text-gray-mid text-base leading-relaxed mb-10 max-w-xl">
-          Tu experiencia tiene valor. Los datos la hacen irrefutable.
+          Convertimos tus ventas, márgenes y patrones de clientes en un plan de acción concreto. Sin tecnicismos. Solo la siguiente decisión.
         </p>
 
         {/* CTAs */}

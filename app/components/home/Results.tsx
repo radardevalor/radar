@@ -12,22 +12,22 @@ const pillars = [
   {
     index: '01',
     Icon: IconAcademic,
-    title: 'Fundamento académico',
-    desc: 'La metodología que usamos está construida sobre investigación rigurosa a nivel doctoral. No inventamos atajos — aplicamos lo que la evidencia demuestra que funciona.',
+    title: 'Base doctoral, aplicación práctica',
+    desc: 'No inventamos marcos — adaptamos lo que la investigación rigurosa a nivel doctoral demuestra que funciona. El rigor no está en el reporte: está en la pregunta que le hacemos a tus datos.',
     accent: '#0A5C4B',
   },
   {
     index: '02',
     Icon: IconSearch,
-    title: 'Diagnóstico estructurado',
-    desc: 'Cada análisis sigue un proceso probado: entender el contexto del negocio, identificar los datos disponibles y encontrar los patrones que realmente importan.',
+    title: 'Proceso consistente, resultado específico',
+    desc: 'Seguimos un método probado en cada sesión: entender el contexto del negocio, identificar los datos disponibles y encontrar los patrones que importan. Siempre en ese orden.',
     accent: '#E9C46A',
   },
   {
     index: '03',
     Icon: IconActionPlan,
-    title: 'Acciones concretas, no reportes',
-    desc: 'El resultado de nuestro trabajo no es una presentación bonita — es un plan de 3 a 5 acciones específicas ordenadas por impacto y facilidad de ejecución.',
+    title: 'Salidas que se ejecutan, no se archivan',
+    desc: 'El resultado de nuestra sesión no es una presentación que se lee una vez y se olvida. Es un plan con acciones específicas, ordenadas por impacto, listas para ejecutar.',
     accent: '#E76F51',
   },
 ]
@@ -38,7 +38,7 @@ export default function Results() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <SectionLabel>Rigor y método</SectionLabel>
-          <h2 className="section-title">Un enfoque respaldado por investigación</h2>
+          <h2 className="section-title">Metodología construida sobre evidencia</h2>
         </div>
 
         {/* Stats row — numbers as typographic monuments */}

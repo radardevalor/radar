@@ -5,16 +5,16 @@ const whatsappHref =
   'https://wa.me/524441428472?text=Hola%2C%20no%20estoy%20seguro%20si%20mi%20negocio%20aplica%20para%20Radar%20de%20Valor.%20%C2%BFMe%20pueden%20orientar%3F'
 
 const ideal = [
-  'PYMES con 1–50 empleados que ya tienen operación y quieren crecer',
+  'Negocios con operación real y al menos 6 meses de datos — ventas, gastos, clientes',
   'Comercios, tiendas online o servicios con historial de ventas',
-  'Dueños que toman las decisiones y quieren datos para hacerlo mejor',
-  'Negocios que sienten que podrían sacar más provecho de lo que ya hacen',
+  'Dueños que toman las decisiones y quieren respaldo real para hacerlo mejor',
+  'Negocios que sienten que hay más valor en su operación del que están capturando',
   'Directivos que quieren dejar de adivinar y empezar a actuar con certeza',
 ]
 
 const notIdeal = [
-  'Negocios que acaban de abrir y aún no tienen datos suficientes',
-  'Empresas grandes con equipos de datos propios',
+  'Negocios que acaban de abrir — sin historial de datos no hay señal que leer',
+  'Empresas grandes con equipos de datos propios y capacidad interna de análisis',
   'Quienes buscan magia: resultados sin acción ni compromiso',
   'Negocios que no están dispuestos a compartir su información',
 ]
@@ -25,9 +25,9 @@ export default function ForWhom() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
           <SectionLabel>Perfil de cliente</SectionLabel>
-          <h2 className="section-title">¿Este servicio es para ti?</h2>
+          <h2 className="section-title">Honestidad antes que la venta</h2>
           <p className="section-subtitle mt-2 max-w-xl">
-            Trabajamos mejor con ciertos tipos de negocios. La honestidad antes que la venta.
+            Somos la opción correcta para algunos negocios y la equivocada para otros. Aquí está la diferencia.
           </p>
         </div>
 

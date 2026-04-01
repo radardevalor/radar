@@ -16,22 +16,21 @@ export default function About() {
           <div className="w-1 bg-emerald-brand flex-shrink-0 mr-5 sm:mr-8" />
           <div className="flex-1">
           <SectionLabel>Sobre nosotros</SectionLabel>
-          <h2 className="section-title mt-1 mb-6">Hola, somos Radar de Valor</h2>
+          <h2 className="section-title mt-1 mb-6">Por qué construimos esto</h2>
 
           <p className="text-slate-brand leading-relaxed mb-4">
-            Tenemos formación doctoral en análisis de datos y una convicción clara: el conocimiento
-            académico más riguroso solo vale si se puede traducir en acciones concretas para
-            negocios reales. Eso es exactamente lo que hacemos.
+            Tenemos formación doctoral en análisis de datos. Y después de años en academia,
+            llegamos a una conclusión incómoda: el análisis más riguroso del mundo no sirve
+            de nada si el dueño del negocio no puede usarlo el lunes por la mañana.
           </p>
           <p className="text-slate-brand leading-relaxed mb-4">
-            Nuestro enfoque combina el rigor de la investigación con la claridad que necesita
-            un dueño de negocio: sin tecnicismos, sin rodeos, solo lo que importa para
-            tomar mejores decisiones.
+            Por eso construimos Radar de Valor con una regla simple: si no se puede convertir
+            en una acción concreta dentro de 48 horas, no vale la pena decirlo.
           </p>
           <p className="text-slate-brand leading-relaxed mb-8">
-            Construimos Radar de Valor porque creemos que las PYMES merecen el mismo
-            nivel de análisis que tienen las grandes empresas — accesible, práctico y sin
-            necesidad de tener un equipo de datos propio.
+            Creemos que cada PYME merece el mismo nivel de inteligencia analítica que tienen
+            las grandes empresas — sin necesitar su presupuesto, su equipo ni su infraestructura.
+            Solo claridad para las decisiones que importan.
           </p>
 
           <div className="flex flex-wrap gap-2">

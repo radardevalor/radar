@@ -9,20 +9,20 @@ const whatsappHref =
 const steps = [
   {
     number: '01',
-    title: 'Diagnóstico en línea',
-    desc: 'Responde 12 preguntas concretas sobre tu negocio. En 3 minutos obtienes tu puntuación, tu nivel de exposición y los gaps específicos que más te afectan. Gratis, sin registro.',
+    title: 'Calibración inicial',
+    desc: '12 preguntas construidas sobre metodología doctoral. En 3 minutos obtienes tu puntuación de madurez analítica, tu nivel de exposición y los gaps que más te cuestan. Gratis, sin registro.',
     accentColor: '#0A5C4B',
   },
   {
     number: '02',
-    title: 'Sesión de trabajo',
-    desc: 'Si quieres profundizar, agendamos 1 hora para revisar juntos tus datos reales — ventas, márgenes, clientes — y encontrar los patrones que importan. Sin tecnicismos.',
+    title: 'Lectura de señal',
+    desc: 'Una hora para revisar tus datos reales — ventas, márgenes, clientes — y separar el ruido de lo que realmente importa. Sin tecnicismos. Solo lo que cambia tu siguiente decisión.',
     accentColor: '#E9C46A',
   },
   {
     number: '03',
-    title: 'Plan de acción',
-    desc: 'Te entregamos un plan con las 3–5 acciones concretas ordenadas por impacto. No un reporte genérico — acciones específicas para tu negocio, ejecutables de inmediato.',
+    title: 'Plan calibrado',
+    desc: 'Las 3–5 acciones con mayor retorno, ordenadas por impacto y facilidad de ejecución. No un reporte — un mapa de decisiones específico para tu negocio, ejecutable desde el día siguiente.',
     accentColor: '#E76F51',
   },
 ]
@@ -39,7 +39,7 @@ export default function HowItWorks() {
             className="font-heading font-bold text-white mt-1"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', lineHeight: 1.05, letterSpacing: '-0.02em' }}
           >
-            Cómo funciona
+            Tres pasos. Un sistema.
           </h2>
         </div>
 

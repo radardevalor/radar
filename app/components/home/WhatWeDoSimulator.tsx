@@ -46,9 +46,9 @@ export default function WhatWeDoSimulator() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-10">
           <SectionLabel>Lo que hacemos</SectionLabel>
-          <h2 className="section-title">Así convertimos datos en decisiones</h2>
+          <h2 className="section-title">Esto es lo que un analista ve donde tú ves números</h2>
           <p className="section-subtitle mt-2 max-w-2xl">
-            Ajusta variables reales de negocio y observa en tiempo real cómo cambia la utilidad.
+            Ajusta variables reales de negocio y observa en tiempo real cómo cambia la utilidad. Así empieza cada sesión de trabajo.
           </p>
         </div>
 
